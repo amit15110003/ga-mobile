@@ -1,0 +1,5 @@
+- This is the website for Glacial Adventure pvt. ltd mobile version
+- commands :
+- npm install
+- npm start
+- npm run server

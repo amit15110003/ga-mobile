@@ -1,0 +1,358 @@
+.wraper {
+  display: flex;
+}
+
+.th-inline-card {
+  display: flex;
+  overflow-x: scroll !important;
+  transition: background-color 200ms;
+  padding-right: 10px;
+  padding-left: 5px;
+}
+.th-card {
+  display: flex;
+  float: left;
+}
+.th-card-body-bestseller {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  position: relative;
+  width: 220px;
+  height: 220px;
+}
+.th-card-img {
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  height: 220px;
+}
+
+.th-card-bestseller {
+  right: 0;
+  margin-top: 6px;
+  margin-right: 8px;
+  height: 18px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 9px;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 10px;
+  color: #f7ba44;
+}
+
+.th-card-a {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  color: #fff;
+  line-height: 14px;
+  margin-top: -15px;
+}
+.th-card-price {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  color: #868ef5;
+  font-size: 32px;
+  line-height: 36px;
+}
+.th-card-offer {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  color: #fff;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.th-cat-name {
+  font-size: 10px;
+  color: #323c47;
+}
+.th-cat-link,
+.th-cat-link:active {
+  font-size: 10px;
+  color: #323c47;
+  text-decoration: none;
+  display: block;
+}
+
+.th-cat-title {
+  color: #323c47;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+.th-cat-view-all {
+  color: #ff8a00;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.th-card-type-1 {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  position: relative;
+  width: 42vw;
+  border: 0px solid transparent;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+}
+
+.th-card-type-1 .th-card-ribbon {
+  left: 0;
+  margin-top: 8px;
+  margin-left: 8px;
+  height: 18px;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 9px;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 10px;
+  color: #3996ff;
+}
+.th-card-type-1 .th-card-data-img {
+  background-position: center;
+  background-size: cover;
+  border-radius: 3px 3px 0px 0px;
+  background-repeat: no-repeat;
+  height: 30vw;
+}
+.th-card-type-1 .th-card-data .th-card-title {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  color: #323c47;
+  font-size: 16px;
+  display: block;
+}
+.th-card-type-1 .th-card-data .th-card-sub-title {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: #516378;
+  font-size: 12px;
+  display: block;
+}
+.th-card-type-1 .th-card-data .th-card-price {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  color: #323c47;
+  font-size: 15px;
+}
+.th-card-type-1 .th-card-data .th-card-pp {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: #516378;
+  font-size: 12px;
+}
+.th-activity-subtitle {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #516378;
+  font-size: 10px;
+  display: block;
+}
+.th-activity-title {
+  color: #323c47;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+
+.th-card-type-2 {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  position: relative;
+  width: 42vw;
+  border: 0px solid transparent;
+}
+
+.th-card-type-2 .th-card-ribbon1 {
+  margin-top: 155px;
+  margin-left: 8px;
+  height: 18px;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 9px;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 10px;
+  color: #3996ff;
+}
+.th-card-type-2 .th-card-ribbon2 {
+  right: 0;
+  margin-top: 155px;
+  margin-right: 8px;
+  height: 18px;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 9px;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 10px;
+  color: #3996ff;
+}
+.th-card-type-2 .th-card-data-img {
+  background-position: center;
+  background-size: cover;
+  border-radius: 3px 3px 0px 0px;
+  background-repeat: no-repeat;
+  height: 180px;
+}
+.th-card-type-2 .th-card-data .th-card-title {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  color: #323c47;
+  font-size: 16px;
+  display: block;
+}
+.th-card-type-2 .th-card-data .th-card-sub-title {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: #516378;
+  font-size: 12px;
+  display: block;
+}
+.th-card-type-2 .th-card-data .th-card-price {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  color: #323c47;
+  font-size: 16px;
+}
+.th-card-type-2 .th-card-data .th-card-pp {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: #516378;
+  font-size: 12px;
+}
+
+.th-card-type-3 {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  position: relative;
+  width: 65vw;
+  border: 0px solid transparent;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+}
+
+.th-card-type-3 .th-card-ribbon {
+  left: 0;
+  margin-top: 8px;
+  margin-left: 8px;
+  height: 18px;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 9px;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 10px;
+  color: #3996ff;
+}
+.th-card-type-3 .th-card-data-img {
+  background-position: center;
+  background-size: cover;
+  border-radius: 3px 3px 0px 0px;
+  background-repeat: no-repeat;
+  height: 40vw;
+}
+.th-card-type-3 .th-card-data .th-card-title {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  color: #323c47;
+  font-size: 16px;
+  display: block;
+}
+
+.th-card-type-3 .th-card-data .th-card-sub-title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #516378;
+  font-size: 14px;
+  display: block;
+}
+
+.th-card-type-3 .th-card-data .th-card-extra-sub-title {
+  color: #3996ff;
+}
+.th-card-type-3 .th-card-data .th-card-sub-title-1 {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: #323c47;
+  font-size: 12px;
+  display: block;
+}
+
+.th-card-type-3 .th-card-data .th-card-price {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  color: #323c47;
+  font-size: 15px;
+  line-height: 32px;
+}
+.th-card-type-3 .th-card-data .th-card-pp {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: #516378;
+  font-size: 12px;
+}
+.th-card-type-3 .th-card-data .th-card-price-saved {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: #ff8a00;
+  font-size: 12px;
+  display: block;
+}
+.th-card-type-3 .th-card-data .th-card-price-strike {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: #516378;
+  font-size: 14px;
+  display: block;
+  text-decoration: line-through;
+  line-height: 32px;
+}

@@ -1,0 +1,487 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,900|Roboto:400,700&display=swap");
+
+html {
+  overflow-x: hidden !important;
+}
+body {
+  width: 100%;
+  overflow-x: hidden !important;
+}
+::-webkit-scrollbar {
+  height: 0px !important;
+  width: 0px !important; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+button:focus,
+button:active,
+input:focus {
+  box-shadow: none !important;
+  outline: none;
+}
+.form-control:focus {
+  box-shadow: none !important;
+}
+.btn.focus,
+.btn:focus {
+  box-shadow: none !important;
+}
+#logo {
+  margin-top: 10px;
+}
+#menu {
+  float: right;
+  margin-top: 10px;
+}
+/* special class for navbar */
+.th-navbar {
+  box-shadow: none !important;
+  margin-bottom: 10px !important;
+}
+/*  */
+.th-slick-wraper {
+  display: flex !important;
+}
+/*  */
+.th-bg-grey {
+  background-color: #f2f5fb;
+}
+.th-service-title {
+  color: #323c47;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+}
+.th-service-subtitle {
+  color: #516378;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+}
+.th-service-head {
+  color: #323c47;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.th-service-subhead {
+  color: #516378;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.th-footer {
+  bottom: auto !important;
+}
+.th-footer-link li a {
+  color: #516378;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+.th-footer-link {
+  list-style-type: none;
+}
+.th-footer-head {
+  color: #323c47;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.th-copyright a {
+  color: #323c47;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.th-card-promotion {
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-color: #4565ae;
+  height: 100px;
+  border-radius: 3px;
+}
+.th-card-promotion-title {
+  color: #ffffff;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  display: block;
+}
+.th-card-promotion-subtitle {
+  color: #ffffff;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  display: block;
+}
+
+.th-btn {
+  background: linear-gradient(-90deg, #f84b0f, #ff8a00);
+  font-size: 12px;
+  color: #fff;
+}
+
+.th-card-promotion2 {
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  height: 25vh;
+}
+.th-card-promotion-grad {
+  border-radius: 5px;
+  height: 25vh;
+  background: linear-gradient(
+    90deg,
+    RGB(23, 32, 42, 0.2),
+    RGB(23, 32, 42, 0.9)
+  );
+}
+.th-card-promotion2-title {
+  color: #ffffff;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  display: block;
+  text-transform: uppercase;
+}
+.th-card-promotion2-ribbon {
+  right: 0;
+  margin-right: 8px;
+  height: 18px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 9px;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 10px;
+  color: #3996ff;
+}
+
+.th-card-promotion2-justin {
+  color: #ffffff;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  display: block;
+  position: absolute;
+  bottom: 35px;
+  margin-left: 8px;
+}
+.th-card-promotion2-price {
+  color: #ffffff;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  display: block;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 0;
+  margin-left: 8px;
+}
+.th-arrow {
+  font-weight: 700;
+  text-decoration: none;
+  color: #000;
+}
+.th-file {
+  font-weight: 400;
+  text-decoration: none;
+  color: #f84b0f;
+  font-size: 24px;
+}
+.th-nav-head {
+  color: #323c47;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+.th-nav-sec {
+  z-index: 100000;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background-color: #fff;
+  height: 60px;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+}
+.th-enq-pop {
+  z-index: 7000;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 10px;
+  width: 100%;
+  /* display: none; */
+}
+.th-enq-pop-btn {
+  z-index: 6000;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  border-radius: 25px;
+  background: linear-gradient(-90deg, #f84b0f, #ff8a00);
+}
+.th-enq-pop-btn button {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 25px;
+}
+.th-enq-pop a {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: #fff;
+  font-size: 12px;
+  text-decoration: none;
+}
+.th-enq-pop-extend {
+  border-radius: 25px;
+  background: linear-gradient(-90deg, #f84b0f, #ff8a00);
+  transition: all 3s ease-in-out;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.th-enq-pop img,
+.th-enq-pop-btn img {
+  height: 25px;
+  width: 25px;
+}
+.pop-btn-close {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
+.th-enq-pop .cross-out-mark {
+  height: 15px;
+  width: 15px;
+}
+
+.active {
+  display: block !important;
+  transition: all 0.5s ease-in-out;
+}
+
+.th-btn-cross {
+  background-color: transparent;
+  border: none;
+}
+
+.th-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.th-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: solid 2px #8a9bad;
+}
+
+/* On mouse-over, add a grey background color */
+.th-checkbox:hover input ~ .checkmark {
+  background-color: #fff;
+}
+
+/* When the checkbox is checked, add a blue background */
+.th-checkbox input:checked ~ .checkmark {
+  background-color: #f84b0f;
+  border: solid 2px #f84b0f;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.th-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.th-checkbox .checkmark:after {
+  left: 5px;
+  top: 0px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.slick-dots li button:before {
+  font-size: 8px !important;
+  line-height: 10px !important;
+}
+.slick-dots li {
+  margin: 0 !important;
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.plus-minus-input {
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.plus-minus-input .input-group-field {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  width: 40px;
+  color: #f84b0f;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+
+.plus-minus-input .input-group-field::-webkit-inner-spin-button,
+.plus-minus-input .input-group-field ::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.plus-minus-input .input-group-button .circle {
+  font-size: 10px;
+  color: #f84b0f;
+  background-color: transparent;
+  border: solid 1.5px #f84b0f;
+  border-radius: 50%;
+  padding: 3px 5px;
+}
+.th-login-head {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: #f84b0f;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.th-login {
+  border-radius: 3px;
+  border-color: transparent;
+  -webkit-box-shadow: 1px 1px 3px 1px rgba(46, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 3px 1px rgba(46, 0, 0, 0.2);
+  box-shadow: 1px 1px 3px 1px rgba(46, 0, 0, 0.2);
+  margin-top: 140px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 4px;
+}
+
+.th-signup {
+  border-radius: 3px;
+  border-color: transparent;
+  -webkit-box-shadow: 1px 1px 3px 1px rgba(46, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 3px 1px rgba(46, 0, 0, 0.2);
+  box-shadow: 1px 1px 3px 1px rgba(46, 0, 0, 0.2);
+  margin-top: 180px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 4px;
+}
+
+.th-login-input {
+  font-size: 14px;
+  color: #8a9bad;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+.th-login-input:focus {
+  box-shadow: none !important;
+  outline: none;
+}
+.th-login-btn {
+  border: solid 1.5px linear-gradient(-90deg, #f84b0f, #ff8a00);
+  width: 25vw;
+  padding: 6px 12px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 20px;
+  color: white;
+  border-radius: 3px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  background: linear-gradient(-90deg, #f84b0f, #ff8a00);
+  text-transform: uppercase;
+}
+.th-form-footer {
+  font-size: 14px;
+  color: #8a9bad;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+
+.bg-popup {
+  z-index: 1000000;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  display: none;
+}
+
+.th-popup-img {
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  background-position: center;
+  background-size: cover;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  position: fixed;
+}
+
+.popup-close {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+}

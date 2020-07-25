@@ -1,0 +1,549 @@
+.th-detail-head {
+  color: #323c47;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+.th-card-type-5 {
+  display: block;
+  position: relative;
+  width: 100vw;
+  border: 0px solid transparent;
+  border-radius: 3px;
+}
+
+.th-card-type-5 .th-card-ribbon {
+  left: 0;
+  margin-top: 8px;
+  margin-left: 8px;
+  height: 18px;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 9px;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 10px;
+  color: #3996ff;
+}
+
+.th-card1-ribbon {
+  left: 0;
+  margin-top: 6px;
+  margin-left: 15px;
+  height: 18px;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 9px;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 10px;
+  color: #3996ff;
+}
+.th-card2-ribbon {
+  left: 20vw;
+  margin-top: 6px;
+  margin-left: 10px;
+  height: 18px;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 9px;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 10px;
+  color: #3996ff;
+}
+.th-card-type-5 .th-card-data-img {
+  background-position: center;
+  background-size: cover;
+  border-radius: 3px 3px 0px 0px;
+  background-repeat: no-repeat;
+  height: 190px;
+}
+.th-card-type-5 .th-card-data .th-card-title {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  color: #323c47;
+  font-size: 18px;
+  display: block;
+}
+
+.th-card-type-5 .th-card-data .th-card-sub-title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #516378;
+  font-size: 12px;
+  display: block;
+}
+
+.th-card-type-5 .th-card-data .th-card-extra-sub-title {
+  color: #3996ff;
+}
+
+.th-card-type-5 .th-card-data .th-card-sub-title-1 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  color: #323c47;
+  font-size: 14px;
+  display: block;
+}
+
+.th-card-type-5 .th-card-data .th-card-price {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  color: #323c47;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+.th-card-type-5 .th-card-data .th-card-pp {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: #516378;
+  font-size: 12px;
+}
+
+.th-card-type-5 .th-card-data .th-card-price-saved {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: #ff8a00;
+  font-size: 12px;
+  display: block;
+  line-height: 30px;
+}
+
+.th-card-type-5 .th-card-data .th-card-price-strike {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: #516378;
+  font-size: 12px;
+  text-decoration: line-through;
+  line-height: 10px;
+}
+.th-off-price {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 9px;
+  color: #3996ff;
+}
+.th-detail-travel-selector {
+  background-color: rgb(248, 75, 15, 0.1);
+}
+.th-detail-travel-selector .info {
+  color: #516378;
+  font-size: 12px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+.th-detail-travel-selector .info-detail {
+  background-color: transparent;
+  border: none;
+  color: #f84b0f;
+  font-size: 12px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+.th-detailpage-head {
+  color: #323c47;
+  font-size: 15px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.th-detail-travel-selector .add-activity {
+  color: #f84b0f;
+  font-size: 10px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.th-detail-card-places {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: #516378;
+  display: block;
+  font-size: 12px;
+  line-height: 20px;
+}
+.th-detail-card-content {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: #516378;
+  display: block;
+  font-size: 12px;
+}
+.th-dot-green {
+  color: #40e588;
+}
+.th-dot-red {
+  color: #fa350b;
+}
+.th-detail-view-more {
+  color: #f84b0f;
+  font-size: 12px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.th-detail-view-more :hover {
+  color: #f84b0f;
+  text-decoration: none;
+}
+.th-detail-view-more-arrow {
+  font-weight: 900;
+}
+.th-trip-itenary {
+  color: #f84b0f;
+  font-size: 12px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+
+.th-trip-itinerary-link {
+  color: #323c47;
+  font-size: 13px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  border: none;
+}
+.th-trip-itinerary-body {
+  color: #516378;
+  font-size: 13px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+.th-trip-itinerary-icon i {
+  font-weight: 900;
+}
+.collapsed .th-trip-itinerary-icon {
+  transform: rotate(180deg) !important;
+}
+
+.th-policy {
+  color: #f84b0f;
+  font-size: 12px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+
+.th-policy-link {
+  color: #323c47;
+  font-size: 13px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  border: none;
+}
+.th-policy-body {
+  color: #516378;
+  font-size: 13px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+.th-policy-icon i {
+  font-weight: 900;
+}
+.collapsed .th-policy-icon {
+  transform: rotate(180deg) !important;
+}
+
+.th-detail-header-fixed {
+  height: 48.5px;
+  position: fixed;
+  top: 0;
+  z-index: 100000;
+  width: 100vw;
+  background-color: #fff;
+  -webkit-box-shadow: 2px 0px 0px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 2px 0px 0px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 0px 0px 2px rgba(0, 0, 0, 0.1);
+}
+
+.th-detail-footer-fixed {
+  height: 60px;
+  /* position: fixed; */
+  bottom: 0;
+  z-index: 100000;
+  width: 100vw;
+  background-color: #fff;
+  height: 60px;
+  -webkit-box-shadow: 2px 0px 0px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 2px 0px 0px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 0px 0px 2px rgba(0, 0, 0, 0.1);
+}
+
+.th-detail-btn {
+  border-radius: 17px;
+  background: linear-gradient(-90deg, #f84b0f, #ff8a00);
+  font-size: 14px;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.th-detail-service {
+  color: #323c47;
+  font-size: 15px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+}
+.th-detail-service:active {
+  text-decoration: none;
+  color: #323c47;
+}
+.th-footer-pack-cost {
+  color: #516378;
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  display: block;
+}
+.th-footer-package-price {
+  color: #f84b0f;
+  font-size: 15px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+.th-footer-pack-cost-strike {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: #516378;
+  font-size: 12px;
+  text-decoration: line-through;
+  line-height: 10px;
+}
+.th-budget-head {
+  color: #323c47;
+  font-size: 15px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  display: block;
+}
+.th-detail-budget {
+  -webkit-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.08);
+  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.08);
+}
+.th-budget-package-price {
+  color: #f84b0f;
+  font-size: 15px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+.th-budget-pack-cost-strike {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: #516378;
+  font-size: 12px;
+  text-decoration: line-through;
+  line-height: 10px;
+}
+.th-detail-budget-img {
+  background-position: center;
+  background-size: cover;
+  border-radius: 3px 3px 0px 0px;
+  background-repeat: no-repeat;
+  height: 80px;
+  width: 100%;
+}
+
+.th-detail-budget-link {
+  color: #323c47;
+  font-size: 13px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  border: none;
+}
+.th-budget-i {
+  height: 15px;
+  width: 15px;
+}
+.th-detail-line {
+  border-top: solid 1px #e0e0e0;
+}
+.th-transport-places {
+  color: #516378;
+  font-size: 15px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+.th-transport-time {
+  color: #323c47;
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+.th-transport-img {
+  background-position: center;
+  background-size: cover;
+  border-radius: 3px 3px 0px 0px;
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 50px;
+}
+.th-transport-type {
+  color: #516378;
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  display: block;
+}
+
+.th-checkbox1 {
+  line-height: 1;
+  display: block;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 0px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.th-checkbox1 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #fff;
+  border: solid 2px #f84b0f;
+}
+
+/* On mouse-over, add a grey background color */
+.th-checkbox1:hover input ~ .checkmark1 {
+  background-color: #fff;
+}
+
+/* When the checkbox is checked, add a blue background */
+.th-checkbox1 input:checked ~ .checkmark1 {
+  background-color: #f84b0f;
+  border: solid 2px #f84b0f;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark1:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.th-checkbox1 input:checked ~ .checkmark1:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.th-checkbox1 .checkmark1:after {
+  left: 4px;
+  top: 0px;
+  width: 4px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 1.5px 1.5px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.th-transport-included {
+  color: #f84b0f;
+  font-size: 12px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.th-activity-img {
+  background-position: center;
+  background-size: cover;
+  border-radius: 3px 3px 0px 0px;
+  background-repeat: no-repeat;
+  height: 70px;
+  width: 100%;
+}
+.th-activity-subtitle {
+  color: #516378;
+  font-size: 12px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+.th-activity-price {
+  color: #323c47;
+  font-size: 12px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+.th-activity-perperson {
+  color: #516378;
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+.search-date1 {
+  width: 100%;
+}
+.th-date-bar {
+  display: none;
+}
+.th-travel-bar {
+  display: none;
+}
+.th-travel-bar-subhead {
+  color: #516378;
+  font-size: 12px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+.active {
+  display: block;
+}
+
+.th-mt-5 {
+  margin-top: 3.75rem !important;
+}
+
+.th-calender-border {
+  color: #f84b0f;
+  font-size: 12.5px;
+  background: transparent;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  z-index: 10000;
+  border: none !important;
+  width: 80px;
+}
