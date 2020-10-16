@@ -14,22 +14,74 @@ import "./Assets/css/style1.css";
 import "./Assets/css/style2.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
-import { createStore } from "redux";
-import rootReducers from "./store/reducers/index";
+import { createBrowserHistory } from "history";
+import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
+import thunk from "redux-thunk";
+import createSagaMiddleware from "redux-saga";
+import { routerMiddleware } from "connected-react-router";
+import CacheBuster from "./CacheBuster";
+import * as serviceWorker from "./serviceWorker";
+import axios from "axios";
+import reducers from "./redux/reducers";
+import sagas from "./redux/sagas";
+import App from "./App";
 
-const store = createStore(rootReducers);
+axios.defaults.baseURL = "https://apigalcial.glacialadventures.net/";
+axios.defaults.headers.common.Authorization = `JWT ${localStorage.getItem(
+  "token"
+)}`;
+axios.defaults.headers.post["Content-Type"] = "application/json";
 
+// middlewared
+const history = createBrowserHistory();
+const sagaMiddleware = createSagaMiddleware();
+const routeMiddleware = routerMiddleware(history);
+const middlewares = [thunk, sagaMiddleware, routeMiddleware];
+
+const store = createStore(
+  reducers(history),
+  compose(applyMiddleware(...middlewares))
+);
+sagaMiddleware.run(sagas);
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <CacheBuster>
+    {({ loading, isLatestVersion, refreshCacheAndReload }) => {
+      // console.log(loading)
+      // console.log(isLatestVersion)
+      // if (loading) return null
+      if (!loading && !isLatestVersion) {
+        return (
+          <div class="container h-100">
+            <div class="row align-items-center h-100">
+              <div class="col-md-6 col-xs-12 mx-auto">
+                <div class="jumbotron text-center">
+                  <h5>Application has received an update</h5>
+                  <h5>Please click update button use the application</h5>
+                  <button
+                    className="th-btn-primary px-3 py-1 my-3"
+                    onClick={() => {
+                      refreshCacheAndReload();
+                    }}
+                  >
+                    Update Version
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      return (
+        <Provider store={store}>
+          <App history={history} />
+        </Provider>
+      );
+    }}
+  </CacheBuster>,
+
   document.getElementById("root")
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+serviceWorker.register();
+export { store, history };
