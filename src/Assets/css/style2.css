@@ -1196,7 +1196,7 @@ focus {
 }
 
 label {
-  color: #9a929e;
+  /* color: #9a929e; */
   display: inline-block;
   cursor: pointer;
   font-weight: bold;

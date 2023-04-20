@@ -10,16 +10,14 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 const App = (props) => {
   const { history } = props;
   return (
-    <div>
-      <Router history={history}>
-        <Switch>
-          <Route exact path={["/home", "/"]} component={Home}></Route>
-          <Route exact path="/details" component={Detail}></Route>
-          <Route exact path="/list" component={List1}></Route>
-          <Route exact path="/login" component={Login}></Route>
-        </Switch>
-      </Router>
-    </div>
+    <Router history={history}>
+      <Switch>
+        <Route exact path={["/home", "/"]} component={Home}></Route>
+        <Route exact path="/details" component={Detail}></Route>
+        <Route exact path="/list" component={List1}></Route>
+        <Route exact path="/login" component={Login}></Route>
+      </Switch>
+    </Router>
   );
 };
 

@@ -1,6 +1,7 @@
 import axios from "axios";
 import setAuthToken from "../global/setAuthToken";
 import store from "store";
+import { history } from "..";
 export async function login(contact1, password1) {
   const value = { username: contact1, password: password1 };
   let authorized1 = false;
@@ -10,12 +11,12 @@ export async function login(contact1, password1) {
       if (response.status === 200) {
         authorized1 = true;
         // const expirationDate = new Date(new Date().getTime() + 3600 * 10000);
-        localStorage.setItem("token", response.data.token);
-        store.set("user", response.data.user);
+        localStorage.setItem("token", response.data.access);
+        // store.set("user", response.data.user);
 
         // localStorage.setItem("expirationDate", expirationDate);
 
-        setAuthToken(response.data.token);
+        setAuthToken(response.data.access);
         // console.log(this.props);
         // setCart(response.data.user.id);
         return {
@@ -49,6 +50,7 @@ export async function currentAccount() {
   return axios
     .get(`/api/current_user/`)
     .then((response) => {
+      history.push("/");
       authorized1 = true;
       const { data } = response;
       return {
