@@ -27,7 +27,7 @@ import reducers from "./redux/reducers";
 import sagas from "./redux/sagas";
 import App from "./App";
 
-axios.defaults.baseURL = "https://apigalcial.glacialadventures.net/";
+axios.defaults.baseURL = "https://glacialapi.trixno.com/";
 axios.defaults.headers.common.Authorization = `JWT ${localStorage.getItem(
   "token"
 )}`;

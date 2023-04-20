@@ -37,36 +37,59 @@ class Login extends Component {
   render() {
     console.log(this.props.user);
     return (
-      <form onSubmit={this.onFinish}>
-        <div className="row "></div>
-        <div className="row">
-          <div className=" form-group col ">
-            <input
-              name="username"
-              className="form-control th-14 "
-              placeholder="Username"
-              value={this.state.username}
-              onChange={this.handleInputChange}
-            ></input>
-          </div>
-        </div>
-        <div className="row">
-          <div className=" form-group col th-footer-input ">
-            <input
-              name="password"
-              type="password"
-              className="form-control th-14"
-              placeholder="Password."
-              value={this.state.password}
-              onChange={this.handleInputChange}
-            ></input>
-          </div>
-        </div>
+      <React.Fragment>
+        <div
+          className="d-flex align-items-center justify-content-center"
+          style={{ height: "100vh" }}
+        >
+          <div className="mx-auto p-3 w-100">
+            <h3>Sign In</h3>
+            <div className="th-service-subtitle pb-3">
+              Don't have an account?{" "}
+              <span>
+                <a href="/">Create a free account</a>
+              </span>
+            </div>
 
-        <button className="btn th-btn-gradient my-3 th-18" type="submit">
-          Login
-        </button>
-      </form>
+            <form onSubmit={this.onFinish}>
+              <div className="row "></div>
+              <div className="row">
+                <div className=" form-group col ">
+                  <label htmlFor="username">Email</label>
+                  <input
+                    name="username"
+                    className="form-control th-14 "
+                    placeholder="Username"
+                    id="username"
+                    value={this.state.username}
+                    onChange={this.handleInputChange}
+                  ></input>
+                </div>
+              </div>
+              <div className="row">
+                <div className=" form-group col th-footer-input ">
+                  <label htmlFor="username">Password</label>
+                  <input
+                    name="password"
+                    type="password"
+                    className="form-control th-14"
+                    placeholder="Password."
+                    value={this.state.password}
+                    onChange={this.handleInputChange}
+                  ></input>
+                </div>
+              </div>
+
+              <button
+                className="btn th-btn my-3 th-18 w-100 text-white"
+                type="submit"
+              >
+                Login
+              </button>
+            </form>
+          </div>
+        </div>
+      </React.Fragment>
     );
   }
 }
