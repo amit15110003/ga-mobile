@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { history } from "../../../index";
 import { Link } from "react-router-dom";
+import Logo from "../../../Assets/Images/Navbar/logo.svg";
+import Home from "../../Home/Index";
 const mapStateToProps = ({ user, dispatch }) => ({
   dispatch,
   user,
@@ -31,11 +33,12 @@ class Login extends Component {
       type: "user/LOGIN",
       payload: this.state.values,
     });
-    history.push("/");
   };
 
   render() {
-    console.log(this.props.user);
+    if (this.props?.user?.authorized) {
+      return <Home />;
+    }
     return (
       <React.Fragment>
         <div
@@ -43,6 +46,9 @@ class Login extends Component {
           style={{ height: "100vh" }}
         >
           <div className="mx-auto p-3 w-100">
+            <div className="text-center pb-2">
+              <img id="logo" src={Logo} style={{ height: "50px" }} />
+            </div>
             <h3>Sign In</h3>
             <div className="th-service-subtitle pb-3">
               Don't have an account?{" "}
