@@ -1,7 +1,17 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import Logo from "../../../Assets/Images/Navbar/logo.svg";
+const mapStateToProps = ({ user, dispatch }) => ({
+  dispatch,
+  user,
+});
 
 class Sidebar extends Component {
+  onLogOut = () => {
+    this.props.dispatch({
+      type: "user/LOGOUT",
+    });
+  };
   render() {
     return (
       <div class="sidebar" id="sidebar">
@@ -10,29 +20,26 @@ class Sidebar extends Component {
             <a href=" " class="">
               <img id="logo" src={Logo} alt="" />
             </a>
-            <a
-              href="signup.html"
-              class="btn th-sidebar-btn-pay float-right mt-1 th-btn-1"
-            >
+            <a href="" class="btn th-sidebar-btn-pay float-right mt-1 th-btn-1">
               PAY NOW
             </a>
           </div>
           <div class="th-sidebar-border"></div>
-          <div class="d-block px-3 py-4">
-            <a href="login.html" class="btn th-sidebar-btn-1 mr-1 th-btn-1">
-              LOGIN
-            </a>
-            <a
-              href="signup.html"
-              class="btn th-sidebar-btn float-right th-btn-1"
-            >
-              CREATE PROFILE
-            </a>
-          </div>
+          {!this.props?.user?.authorized && (
+            <div class="d-block px-3 py-4">
+              <a href="/login" class="btn th-sidebar-btn-1 mr-1 th-btn-1">
+                LOGIN
+              </a>
+              <a href="" class="btn th-sidebar-btn float-right th-btn-1">
+                CREATE PROFILE
+              </a>
+            </div>
+          )}
+
           <div class="th-sidebar-border"></div>
           <ul class="list-unstyled components px-3">
             <li>
-              <a href="index1.html">
+              <a href="">
                 Home <i class="fa fa-angle-right mr-2 float-right"></i>
               </a>
             </li>
@@ -40,42 +47,42 @@ class Sidebar extends Component {
           <div class="th-sidebar-border"></div>
           <ul class="list-unstyled components px-3">
             <li>
-              <a href="index2.html">
+              <a href="">
                 Tour Packages<i class="fa fa-angle-right mr-2 float-right"></i>
               </a>
             </li>
             <li>
-              <a href="index2.html">
+              <a href="">
                 Honeymoon Packages
                 <i class="fa fa-angle-right mr-2 float-right"></i>
               </a>
             </li>
             <li>
-              <a href="index3.html">
+              <a href="">
                 Family Packages
                 <i class="fa fa-angle-right mr-2 float-right"></i>
               </a>
             </li>
             <li>
-              <a href="index4.html">
+              <a href="">
                 Indian Destinations
                 <i class="fa fa-angle-right mr-2 float-right"></i>
               </a>
             </li>
             <li>
-              <a href="index4.html">
+              <a href="">
                 Weekend Getaways
                 <i class="fa fa-angle-right mr-2 float-right"></i>
               </a>
             </li>
             <li>
-              <a href="index3.html">
+              <a href="">
                 Destination Guide
                 <i class="fa fa-angle-right mr-2 float-right"></i>
               </a>
             </li>
             <li>
-              <a href="index2.html">
+              <a href="">
                 Sesonal Packages
                 <i class="fa fa-angle-right mr-2 float-right"></i>
               </a>
@@ -92,17 +99,28 @@ class Sidebar extends Component {
             <center>
               <a
                 class="btn2 color th-sidebar-btn text-center btn th-btn-1"
-                href="form1.html"
+                href=""
               >
                 Send Enquiry
               </a>
             </center>
           </div>
-          <ul class="list-unstyled components px-3">
-            <li class="my-3">
-              <a href="profile.html">Log Out</a>
-            </li>
-          </ul>
+          {this.props?.user?.authorized && (
+            <ul class="list-unstyled components px-3">
+              <li class="my-3" onClick={this.onLogOut}>
+                <div className="th-sidebar-btn-logout d-flex justify-content-center align-items-center">
+                  Logout{" "}
+                  <i
+                    className="fa fa-sign-out "
+                    style={{
+                      color: "#f84b0f",
+                      marginTop: "-7px",
+                    }}
+                  />
+                </div>
+              </li>
+            </ul>
+          )}
           <div class="py-2 my-5"></div>
         </div>
         <div id="sidebar-dismiss"></div>
@@ -111,4 +129,4 @@ class Sidebar extends Component {
   }
 }
 
-export default Sidebar;
+export default connect(mapStateToProps)(Sidebar);

@@ -1196,7 +1196,7 @@ focus {
 }
 
 label {
-  color: #9a929e;
+  /* color: #9a929e; */
   display: inline-block;
   cursor: pointer;
   font-weight: bold;
@@ -1205,7 +1205,7 @@ label {
 }
 
 input[type="radio"]:checked + label {
-  color: #ccc8ce;
+  /* color: #ccc8ce; */
   background: #675f6b;
 }
 
