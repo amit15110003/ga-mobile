@@ -1,5 +1,7 @@
+/** @format */
+
 import React from "react";
-import Card from "../Card/Card2";
+import Card from "../Card/PopularDestinationCard";
 import Data from "../Data/ActivityData";
 
 export default function Activity() {

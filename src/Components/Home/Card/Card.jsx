@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 
 export default function Card(props) {
@@ -7,8 +9,9 @@ export default function Card(props) {
         <div
           class="th-card-img"
           style={{
-            backgroundImage:
-              "url('https://us.123rf.com/450wm/detech/detech1807/detech180700008/104235577-yellow-gradient-background-design.jpg?ver=6')"
+            backgroundImage: `url(${props?.bg_img})`,
+            backgroundBlendMode: "multiply",
+            backgroundColor: "#8a9bad",
           }}
         >
           <div class="row py-2 px-3">
@@ -16,7 +19,7 @@ export default function Card(props) {
             <div class="col-12 py-2">
               <span class="th-card-a">{props.heading}</span>
               <br />
-              <span class="th-card-price">{props.price}</span>
+              <span class="th-card-price">₹ {Math.round(props.price)}</span>
               <div class="row pt-3">
                 <p class="col-9 th-card-offer">{props.content}</p>
               </div>

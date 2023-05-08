@@ -1,3 +1,5 @@
+/** @format */
+
 .wraper {
   display: flex;
 }
@@ -47,7 +49,7 @@
   padding: 4px 8px;
   border-radius: 3px;
   font-size: 10px;
-  color: #f7ba44;
+  color: #3996ff;
 }
 
 .th-card-a {
@@ -60,7 +62,7 @@
 .th-card-price {
   font-family: "Roboto", sans-serif;
   font-weight: bold;
-  color: #868ef5;
+  color: #fff;
   font-size: 32px;
   line-height: 36px;
 }
@@ -115,7 +117,7 @@
   left: 0;
   margin-top: 8px;
   margin-left: 8px;
-  height: 18px;
+  min-height: 18px;
   font-family: "Lato", sans-serif;
   font-weight: 900;
   text-transform: uppercase;
@@ -129,32 +131,33 @@
   border-radius: 3px;
   font-size: 10px;
   color: #3996ff;
+  z-index: 2;
 }
 .th-card-type-1 .th-card-data-img {
   background-position: center;
   background-size: cover;
   border-radius: 3px 3px 0px 0px;
   background-repeat: no-repeat;
-  height: 30vw;
+  height: 25vh;
 }
 .th-card-type-1 .th-card-data .th-card-title {
   font-family: "Lato", sans-serif;
   font-weight: 900;
-  color: #323c47;
+  color: #fff;
   font-size: 16px;
   display: block;
 }
 .th-card-type-1 .th-card-data .th-card-sub-title {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  color: #516378;
+  color: #fff;
   font-size: 12px;
   display: block;
 }
 .th-card-type-1 .th-card-data .th-card-price {
   font-family: "Lato", sans-serif;
   font-weight: 900;
-  color: #323c47;
+  color: #fff;
   font-size: 15px;
 }
 .th-card-type-1 .th-card-data .th-card-pp {
@@ -261,6 +264,7 @@
 }
 
 .th-card-type-3 {
+  min-height: 30vh;
   margin-right: 0.5rem;
   margin-left: 0.5rem;
   margin-bottom: 0.5rem;
@@ -355,4 +359,31 @@
   display: block;
   text-decoration: line-through;
   line-height: 32px;
+}
+.th-destination-info-card {
+  position: absolute;
+  background-color: rgba(31, 25, 25, 0.49);
+  color: #fff !important;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+}
+.th-card-orange-ribbon {
+  height: 18px;
+  margin-top: 5px;
+  font-family: "Lato", sans-serif;
+  /* font-weight: 900; */
+  text-transform: uppercase;
+  font-size: 9px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(315deg, #f84b0f 0%, #ff8a00 97.09%);
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 10px;
+  color: #fff;
+  width: max-content;
 }

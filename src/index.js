@@ -1,6 +1,9 @@
+/** @format */
+
 import React from "react";
 import ReactDOM from "react-dom";
 import "./Assets/css/card.css";
+import "./Assets/css/general.css";
 import "./Assets/css/bootstrap-datepicker3.standalone.css";
 import "./Assets/css/detailpage.css";
 import "./Assets/css/filter.css";
@@ -27,7 +30,8 @@ import reducers from "./redux/reducers";
 import sagas from "./redux/sagas";
 import App from "./App";
 
-axios.defaults.baseURL = "https://apigalcial.glacialadventures.net/";
+// axios.defaults.baseURL = "https://apigalcial.glacialadventures.net/";
+axios.defaults.baseURL = "https://glacialapi.trixno.com/";
 axios.defaults.headers.common.Authorization = `JWT ${localStorage.getItem(
   "token"
 )}`;

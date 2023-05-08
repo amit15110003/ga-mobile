@@ -1,64 +1,64 @@
 /** @format */
 
 import React from "react";
-import PopularDestinationCard from "../Card/PopularDestinationCard";
+import TrekkingCard from "../Card/TrekkingCard";
 import Data from "../Data/DestinationData";
 import axios from "axios";
 import { Skeleton } from "antd";
 import { useState, useEffect } from "react";
 
-function Destination(props) {
-  const [popularDestinationList, setPopularDestinationList] = useState([]);
-  const [popularDestinationLoading, setPopularDestinationLoading] =
-    useState(false);
+function Trekking(props) {
+  const [trekkingList, setTrekkingList] = useState([]);
+  const [trekkingLoading, setTrekkingLoading] = useState(false);
   const fakeData = [1, 2, 3];
-  const Grid = popularDestinationList?.map((item, index) => {
+  const Grid = trekkingList?.map((item, index) => {
     return (
-      <PopularDestinationCard
-        tag={item.dest_ribbon}
-        img={item.dest_img}
-        header={item.dest_descr}
+      <TrekkingCard
+        price={item.trek_price}
+        img={item.trek_img}
+        title={item.trek__trek_name}
         packageCount={item.additional_info?.count}
-        // packageCount={item.price}
+        duration={item.trek__duration}
+        level={item.trek__difficulty_type}
         // span={item.span}
         id="destination"
       />
     );
   });
 
-  const fetchPopularDestinationList = (params = {}) => {
-    setPopularDestinationLoading(true);
+  const fetchTrekkingList = (params = {}) => {
+    setTrekkingLoading(true);
     axios
-      .get(`/client-web-master-apiv1/destinationslider`, {
+      .get(`/client-web-master-apiv1/popular_trekking_slider`, {
         headers: {
           Authorization: "",
         },
         params: { ...params },
       })
       .then((res) => {
-        setPopularDestinationList(res.data);
+        setTrekkingList(res.data);
       })
       .catch((err) => {
         console.log(err);
       })
       .finally(() => {
-        setPopularDestinationLoading(false);
+        setTrekkingLoading(false);
       });
   };
 
   useEffect(() => {
-    fetchPopularDestinationList({ status: true });
+    fetchTrekkingList({ status: true });
   }, []);
   return (
     <div>
       <div class="container pt-3 pb-1">
         <div class="row">
-          <h4 class="th-cat-title col-8 text-truncate">popular destination</h4>
+          <h4 class="th-cat-title col-8 text-truncate">popular Trekking</h4>
           <h4 class="th-cat-view-all col-4 text-right">view all</h4>
         </div>
 
         <div class="row py-2">
-          {popularDestinationLoading ? (
+          {trekkingLoading ? (
             fakeData.map((item, index) => (
               <div className="col-4">
                 <Skeleton
@@ -76,4 +76,4 @@ function Destination(props) {
   );
 }
 
-export default Destination;
+export default Trekking;
