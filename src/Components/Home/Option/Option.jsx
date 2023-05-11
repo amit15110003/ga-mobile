@@ -34,7 +34,7 @@ export default function Option() {
     fetchCategoryList();
   }, []);
   return (
-    <div class="container-fluid pt-3 px-0">
+    <div class="container-fluid pt-3 px-2">
       <div class=" row th-row text-center flex-wrap">
         {cateloryLoading
           ? fakeData.map((item, index) => (
