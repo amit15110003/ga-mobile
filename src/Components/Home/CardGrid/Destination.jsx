@@ -21,6 +21,7 @@ function Destination(props) {
         packageCount={item.additional_info?.count}
         // packageCount={item.price}
         // span={item.span}
+        packageDetails={item}
         id="destination"
       />
     );
@@ -54,7 +55,9 @@ function Destination(props) {
       <div class="container pt-3 pb-1">
         <div class="row">
           <h4 class="th-cat-title col-8 text-truncate">popular destination</h4>
-          <h4 class="th-cat-view-all col-4 text-right">view all</h4>
+          <a href="/packages" class="col-4">
+            <h4 class="th-cat-view-all w-100 text-right">view all</h4>
+          </a>
         </div>
 
         <div class="row py-2">

@@ -1,3 +1,5 @@
+/** @format */
+
 import actions from "./actions";
 
 const initialState = {
@@ -10,6 +12,8 @@ const initialState = {
   authorized: false,
   loading: false,
   is_active: false,
+  login: true,
+  showSignUp: false,
 };
 
 export default function userReducer(state = initialState, action) {

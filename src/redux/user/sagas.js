@@ -1,3 +1,5 @@
+/** @format */
+
 import { all, takeEvery, put, call } from "redux-saga/effects";
 // import { notification } from 'antd'
 import { history } from "../../index";
@@ -15,27 +17,32 @@ export function* LOGIN({ payload }) {
     type: "user/SET_STATE",
     payload: {
       loading: true,
+      wrong: false,
     },
   });
   const success = yield call(login, username, password);
-  yield put({
-    type: "user/LOAD_CURRENT_ACCOUNT",
-  });
-  console.log(success);
+
+  // console.log(success);
   if (success) {
     // toast("Logged in Successfully", { type: "success", autoClose: 2000 });
     // history.push("/");
     yield put({
+      type: "user/LOAD_CURRENT_ACCOUNT",
+    });
+    yield put({
       type: "user/SET_STATE",
       payload: {
         wrong: false,
+        login: false,
       },
     });
   } else {
     yield put({
       type: "user/SET_STATE",
       payload: {
+        loading: false,
         wrong: true,
+        login: true,
       },
     });
   }
@@ -57,6 +64,7 @@ export function* LOAD_CURRENT_ACCOUNT() {
         id: response.id,
         name: "Administrator",
         contact,
+
         email,
         avatar,
         role: "admin",
@@ -75,6 +83,7 @@ export function* LOAD_CURRENT_ACCOUNT() {
 export function* LOGOUT() {
   yield call(logout);
   //   toast("Logged out Successfully", { type: "success", autoClose: 2000 });
+  yield history.push("/");
   yield put({
     type: "user/SET_STATE",
     payload: {

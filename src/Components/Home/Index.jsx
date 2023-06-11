@@ -1,6 +1,6 @@
 /** @format */
 
-import React from "react";
+import React, { useState } from "react";
 import SearchBar from "./SearchBar/SearchBar";
 import BestSeller from "./CardGrid/BestSeller";
 import Option from "./Option/Option";
@@ -20,9 +20,9 @@ export default function Index() {
   return (
     <div>
       <Navbar />
+      {/* <Option /> */}
       <SearchBar />
       <BestSeller />
-      <Option />
       <ExclusiveDeals />
       <Destination />
       <CustomPackage />
