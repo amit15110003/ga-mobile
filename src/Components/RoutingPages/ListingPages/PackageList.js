@@ -10,6 +10,8 @@ import { withRouter } from "react-router-dom";
 import { compose } from "redux";
 import { connect } from "react-redux";
 import moment from "moment";
+import { FilterFilled } from "@ant-design/icons";
+import Filters from "./Filters";
 
 const mapStateToProps = ({ user, settings, dispatch }) => ({
   dispatch,
@@ -22,7 +24,7 @@ const PackageList = (props) => {
   console.log({ urlParams });
   const [packageList, setPackageList] = useState([]);
   const [packageLoading, setPackageLoading] = useState(false);
-  const [packageCategoryList, setPackageCategoryList] = useState(false);
+  const [packageCategoryList, setPackageCategoryList] = useState([]);
   const [sortBy, setSortBy] = useState("deals");
   const [travelDate, setTravelDate] = useState(
     props.settings.date
@@ -30,6 +32,9 @@ const PackageList = (props) => {
       : moment().format("YYYY-MM-DD")
   );
   const [payload, setPayload] = useState({});
+  const [showFilters, setShowFilters] = useState(false);
+  const [stateList, setStateList] = useState([]);
+
   const fakeData = [1, 2, 3];
   const Grid = packageList?.map((item, index) => {
     return (
@@ -90,6 +95,26 @@ const PackageList = (props) => {
         console.log(error);
       });
   };
+  const fetchStateList = (params) => {
+    axios
+      .get(`/client-destination/state`, {
+        headers: {
+          Authorization: "",
+        },
+        params: { ...params },
+      })
+      .then((res) => setStateList(res?.data))
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const handleShowFilters = () => {
+    setShowFilters(true);
+  };
+  const closeFilterDrawer = () => {
+    setShowFilters(false);
+  };
 
   useEffect(() => {
     if (Object.keys(payload).length > 0) {
@@ -98,6 +123,7 @@ const PackageList = (props) => {
   }, [payload]);
   useEffect(() => {
     fetchPackageCategoryList();
+    fetchStateList({ status: true });
     let obj = { date: travelDate, is_customized: false, sort_by: sortBy };
 
     // obj.slug_city =
@@ -115,6 +141,7 @@ const PackageList = (props) => {
     }
     setPayload(obj);
   }, [window.location.href]);
+
   return (
     <div>
       <div class="container th-detail-header-fixed">
@@ -181,6 +208,22 @@ const PackageList = (props) => {
         // <div class="th-inline-card">
         <div class="">{Grid}</div>
         // </div>
+      )}
+      {!showFilters ? (
+        <div>
+          <Filters
+            closeFilterDrawer={closeFilterDrawer}
+            showFilters={!showFilters}
+            stateList={stateList}
+            packageCategoryList={packageCategoryList}
+          />
+        </div>
+      ) : (
+        <div class="th-filter-btn py-1 px-2" id="th-filter-btn">
+          <div className="th-pointer" onClick={handleShowFilters}>
+            <FilterFilled className="mr-2" /> Filters
+          </div>
+        </div>
       )}
     </div>
   );
