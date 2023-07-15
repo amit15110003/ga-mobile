@@ -21,7 +21,6 @@ const mapStateToProps = ({ user, settings, dispatch }) => ({
 
 const PackageList = (props) => {
   const urlParams = new URLSearchParams(window.location.search);
-  console.log({ urlParams });
   const [packageList, setPackageList] = useState([]);
   const [packageLoading, setPackageLoading] = useState(false);
   const [packageCategoryList, setPackageCategoryList] = useState([]);
@@ -34,6 +33,7 @@ const PackageList = (props) => {
   const [payload, setPayload] = useState({});
   const [showFilters, setShowFilters] = useState(false);
   const [stateList, setStateList] = useState([]);
+  const [cityList, setCityList] = useState([]);
 
   const fakeData = [1, 2, 3];
   const Grid = packageList?.map((item, index) => {
@@ -108,7 +108,43 @@ const PackageList = (props) => {
         console.log(err);
       });
   };
+  const fetchCityList = (params) => {
+    axios
+      .get(`/client-destination/city`, {
+        headers: {
+          Authorization: "",
+        },
+        params: { ...params },
+      })
+      .then((res) => {
+        setCityList(res?.data?.results);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
+  const handleFilter = (filterData) => {
+    let obj = {};
+    if (filterData?.selectedState) {
+      obj["drop_state"] = filterData?.selectedState;
+    }
+    if (filterData?.selectedCity) {
+      obj["drop_location"] = filterData?.selectedCity;
+    }
+    if (filterData?.selectedCategory) {
+      obj["package_category"] = filterData?.selectedCategory;
+    }
+    if (filterData?.duration.length > 0) {
+      obj["duration__gte"] = filterData?.duration[0];
+      obj["duration__lte"] = filterData?.duration[1];
+    }
+    if (filterData?.price.length > 0) {
+      obj["price_gte"] = filterData?.price[0];
+      obj["price_lte"] = filterData?.price[1];
+    }
+    setPayload({ ...payload, ...obj });
+  };
   const handleShowFilters = () => {
     setShowFilters(true);
   };
@@ -129,6 +165,7 @@ const PackageList = (props) => {
     // obj.slug_city =
     if (urlParams.has("city")) {
       obj["drop_location"] = urlParams.get("city");
+      fetchCityList({ state: urlParams.get("state") });
     }
     if (urlParams.has("state")) {
       obj["drop_state"] = urlParams.get("state");
@@ -146,8 +183,11 @@ const PackageList = (props) => {
     <div>
       <div class="container th-detail-header-fixed">
         <div class="row p-2 th-listpage-nav">
-          <p class="th-detail-head my-auto" style={{ fontSize: 19 }}>
-            <a href="index.html">
+          <p
+            class="th-detail-head my-auto text-capitalize"
+            style={{ fontSize: 19 }}
+          >
+            <a href="/">
               {" "}
               <i class="fa fa-arrow-left p-1 th-arrow"></i>
             </a>
@@ -209,22 +249,24 @@ const PackageList = (props) => {
         <div class="">{Grid}</div>
         // </div>
       )}
-      {!showFilters ? (
-        <div>
-          <Filters
-            closeFilterDrawer={closeFilterDrawer}
-            showFilters={!showFilters}
-            stateList={stateList}
-            packageCategoryList={packageCategoryList}
-          />
+      {/* {showFilters ? ( */}
+      <div>
+        <Filters
+          closeFilterDrawer={closeFilterDrawer}
+          showFilters={showFilters}
+          stateList={stateList}
+          packageCategoryList={packageCategoryList}
+          cityList={cityList}
+          handleFilter={handleFilter}
+        />
+      </div>
+      {/* ) : ( */}
+      <div class="th-filter-btn py-1 px-2" id="th-filter-btn">
+        <div className="th-pointer pr-2" onClick={handleShowFilters}>
+          <FilterFilled className="mr-1" /> Filters
         </div>
-      ) : (
-        <div class="th-filter-btn py-1 px-2" id="th-filter-btn">
-          <div className="th-pointer" onClick={handleShowFilters}>
-            <FilterFilled className="mr-2" /> Filters
-          </div>
-        </div>
-      )}
+      </div>
+      {/* )} */}
     </div>
   );
 };

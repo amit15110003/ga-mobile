@@ -33,14 +33,23 @@ export default function CustomPackageCard(props) {
           <div class="row pt-1">
             <div class="col-4">
               <span class="th-card-sub-title">Just in</span>
-              <span class="th-card-price-strike">{props.offerPrice}</span>
+              <span class="th-card-price-strike">
+                {Intl.NumberFormat("en-IN").format(
+                  Math.round(props.offerPrice)
+                )}
+              </span>
             </div>
             <div class="col-8 text-right">
               <span class="th-card-price-saved">
-                saved {props.totalPrice - props.offerPrice}
+                saved{" "}
+                {Intl.NumberFormat("en-IN").format(
+                  Math.round(props.totalPrice - props.offerPrice)
+                )}
               </span>
               <span class="th-card-price">
-                {props.totalPrice}
+                {Intl.NumberFormat("en-IN").format(
+                  Math.round(props.totalPrice)
+                )}
                 <span class="th-card-pp"> per {props.type}</span>
               </span>
             </div>

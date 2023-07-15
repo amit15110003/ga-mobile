@@ -1,3 +1,5 @@
+/** @format */
+
 import axios from "axios";
 import setAuthToken from "../global/setAuthToken";
 import store from "store";
@@ -10,15 +12,9 @@ export async function login(contact1, password1) {
     .then((response) => {
       if (response.status === 200) {
         authorized1 = true;
-        // const expirationDate = new Date(new Date().getTime() + 3600 * 10000);
         localStorage.setItem("token", response.data.access);
-        // store.set("user", response.data.user);
-
-        // localStorage.setItem("expirationDate", expirationDate);
 
         setAuthToken(response.data.access);
-        // console.log(this.props);
-        // setCart(response.data.user.id);
         return {
           id: response.data.user.id,
           authorized: authorized1,
@@ -29,10 +25,6 @@ export async function login(contact1, password1) {
         };
       } else if (response.status !== 200) {
         console.log(response);
-        // toast(JSON.stringify(response.data.non_field_errors), {
-        //   type: "error",
-        //   autoClose: 2000,
-        // });
       }
     })
     .catch((error) => {
@@ -50,7 +42,6 @@ export async function currentAccount() {
   return axios
     .get(`/api/current_user/`)
     .then((response) => {
-      history.push("/");
       authorized1 = true;
       const { data } = response;
       return {
@@ -60,14 +51,13 @@ export async function currentAccount() {
         role: data.roles,
         email: data.email,
         token: localStorage.getItem("token"),
-        // avatar: data.image,
       };
     })
     .catch((error) => {
       // notification.warning({
-      //   message: 'Invalid Token Id or Session is Lost',
+      //   message: "Invalid Token Id or Session is Lost",
       //   description: error.message,
-      // })
+      // });
     });
 }
 

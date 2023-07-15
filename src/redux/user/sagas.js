@@ -21,14 +21,15 @@ export function* LOGIN({ payload }) {
     },
   });
   const success = yield call(login, username, password);
-
+  yield put({
+    type: "user/LOAD_CURRENT_ACCOUNT",
+  });
   // console.log(success);
   if (success) {
     // toast("Logged in Successfully", { type: "success", autoClose: 2000 });
     // history.push("/");
-    yield put({
-      type: "user/LOAD_CURRENT_ACCOUNT",
-    });
+    yield history.push("/");
+
     yield put({
       type: "user/SET_STATE",
       payload: {

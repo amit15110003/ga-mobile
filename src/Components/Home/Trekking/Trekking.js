@@ -14,6 +14,7 @@ function Trekking(props) {
   const Grid = trekkingList?.map((item, index) => {
     return (
       <TrekkingCard
+        key={item?.id}
         price={item.trek_price}
         img={item.trek_img}
         title={item.trek__trek_name}

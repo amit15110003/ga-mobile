@@ -94,3 +94,6 @@
 .ant-slider-handle-2 {
   transform: translate(-50%, -50%) !important;
 }
+svg {
+  vertical-align: baseline !important;
+}
