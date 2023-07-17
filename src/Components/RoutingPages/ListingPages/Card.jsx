@@ -61,25 +61,33 @@ export default function Card(props) {
               ))}
             </span>
             <span class="th-card-price-strike pt-3">
-              {props?.offer > 0 ? `₹ ${Math.round(props.total_price)}` : null}
+              {props?.offer > 0
+                ? `₹ ${Intl.NumberFormat("en-IN").format(
+                    Math.round(props.total_price)
+                  )}`
+                : null}
             </span>
             <div class="row">
-              <div class="col-6">
+              <div class="col-7">
                 <span class="th-card-price">
                   {props.offer > 0
-                    ? `₹ ${Math.round(
-                        props.total_price -
-                          (props?.total_price * props?.offer) / 100
+                    ? `₹ ${Intl.NumberFormat("en-IN").format(
+                        Math.round(
+                          props.total_price -
+                            (props?.total_price * props?.offer) / 100
+                        )
                       )}`
-                    : `₹ ${props.total_price}`}
+                    : `₹ ${Intl.NumberFormat("en-IN").format(
+                        props.total_price
+                      )}`}
                   <span class="th-card-pp"> per {props.price_tag}</span>
                 </span>
               </div>
-              <div class="col-6 text-right">
+              <div class="col-5 text-right">
                 <span class="th-card-price-saved">
                   {props?.offer > 0
-                    ? `saved ₹ ${Math.round(
-                        (props?.total_price * props?.offer) / 100
+                    ? `saved ₹ ${Intl.NumberFormat("en-IN").format(
+                        Math.round((props?.total_price * props?.offer) / 100)
                       )}`
                     : null}
                 </span>

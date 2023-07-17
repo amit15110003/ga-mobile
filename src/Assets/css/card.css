@@ -132,6 +132,7 @@
   font-size: 10px;
   color: #3996ff;
   z-index: 2;
+  max-width: 90% !important;
 }
 .th-card-type-1 .th-card-data-img {
   background-position: center;

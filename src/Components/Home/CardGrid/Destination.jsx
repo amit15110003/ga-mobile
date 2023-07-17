@@ -37,7 +37,10 @@ function Destination(props) {
         params: { ...params },
       })
       .then((res) => {
-        setPopularDestinationList(res.data);
+        let destinations = res.data.filter(
+          (item) => item?.des_type !== "country"
+        );
+        setPopularDestinationList(destinations);
       })
       .catch((err) => {
         console.log(err);

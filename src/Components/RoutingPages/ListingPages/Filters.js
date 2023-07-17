@@ -9,9 +9,11 @@ const urlParams = new URLSearchParams(window.location.search);
 const { Option } = Select;
 const Filters = (props) => {
   const formRef = useRef();
-  const [selectedState, setSelectedState] = useState();
-  const [selectedCity, setSelectedCity] = useState();
-  const [selectedCategory, setSelectedCategory] = useState();
+  const [selectedState, setSelectedState] = useState(urlParams.get("state"));
+  const [selectedCity, setSelectedCity] = useState(urlParams.get("city"));
+  const [selectedCategory, setSelectedCategory] = useState(
+    urlParams.get("category")
+  );
   const [cityList, setCityList] = useState(props?.cityList);
   const [duration, setDuration] = useState([0, 20]);
   const [price, setPrice] = useState([5000, 90000]);
@@ -50,8 +52,6 @@ const Filters = (props) => {
     setCityList([]);
     if (each) {
       setSelectedState(each?.value);
-      console.log("oooooo", each);
-      fetchCityList({ state: each.value });
     } else {
       setSelectedState();
     }
@@ -59,27 +59,23 @@ const Filters = (props) => {
   useEffect(() => {
     if (props.showFilters) {
       if (urlParams.has("state")) {
-        // setSelectedState(urlParams.get("state"));
         formRef.current.setFieldsValue({
-          state: props?.stateList?.filter(
-            (el) => el?.id == urlParams.get("state")
-          )[0]?.state_name,
+          state: props?.stateList?.filter((el) => el?.id == selectedState)[0]
+            ?.state_name,
         });
-        // fetchCityList({ state: urlParams.get("state") });
       }
       if (urlParams.has("city")) {
         setSelectedCity(urlParams.get("city"));
         formRef.current.setFieldsValue({
-          city: props?.cityList?.filter(
-            (el) => el?.id == urlParams.get("city")
-          )[0]?.city_name,
+          city: props?.cityList?.filter((el) => el?.id == selectedCity)[0]
+            ?.city_name,
         });
       }
       if (urlParams.has("category")) {
         setSelectedState(urlParams.get("state"));
         formRef.current.setFieldsValue({
           category: props?.packageCategoryList?.filter(
-            (el) => el?.id == urlParams.get("category")
+            (el) => el?.id == selectedCategory
           )[0]?.package_category_name,
         });
       }
@@ -109,7 +105,11 @@ const Filters = (props) => {
         console.log(err);
       });
   };
-
+  useEffect(() => {
+    if (selectedState) {
+      fetchCityList({ state: selectedState });
+    }
+  }, [selectedState]);
   return (
     <div>
       <Drawer

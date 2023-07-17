@@ -43,7 +43,7 @@ export default function CustomPackageCard(props) {
               <span class="th-card-price-saved">
                 saved{" "}
                 {Intl.NumberFormat("en-IN").format(
-                  Math.round(props.totalPrice - props.offerPrice)
+                  Math.round(Math.abs(props.totalPrice - props.offerPrice))
                 )}
               </span>
               <span class="th-card-price">
